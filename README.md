@@ -113,6 +113,22 @@ Every agent/category has **26 fallback models** that rotate through 3 API keys:
 primary → spare → last → next model spare → next model last → ...
 ```
 
+### Runtime Fallback (OMO defaults)
+
+| Setting | Value | Meaning |
+|---|---|---|
+| `timeout_seconds` | 30 | Max wait for model response before fallback |
+| `cooldown_seconds` | 60 | Wait between retrying a failed model |
+| `max_fallback_attempts` | 3 | Max fallback tries before giving up |
+| `retry_on_errors` | 400,401,403,404,429,500,502,503,504 | HTTP errors that trigger fallback |
+| `notify_on_fallback` | true | Show toast when model switches |
+
+**Max total wait:** 30s timeout + 60s cooldown × 3 attempts = ~3.5 minutes
+
+> **CRITICAL:** `timeout_seconds: 0` DISABLES the timeout watchdog entirely.
+> This causes OpenCode to wait indefinitely on hung requests. Never set to 0.
+> Source: [message-update-handler.ts#L24](https://github.com/code-yeongyu/oh-my-openagent/blob/dev/packages/omo-opencode/src/hooks/runtime-fallback/message-update-handler.ts#L24)
+
 ## Script Options
 
 | Option | Linux/macOS | Windows | Description |
@@ -162,7 +178,7 @@ omo-config/
 - Vision plugin (`vision-auto.ts`) is a user plugin — **not overwritten** by OpenCode updates
 - All models use Alibaba Coding Plan via DashScope API (`https://coding-intl.dashscope.aliyuncs.com/v1`)
 - API key rotation handles quota exhaustion automatically via fallback chains
-- Runtime fallback is enabled with 26 attempts, 15s cooldown, no timeout
+- Runtime fallback uses OMO defaults: 3 attempts, 60s cooldown, 30s timeout
 
 ## Troubleshooting
 

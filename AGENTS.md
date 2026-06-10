@@ -248,7 +248,38 @@ Models: `qwen3.7-plus`, `qwen3.6-plus`, `qwen3.5-plus`, `kimi-k2.5`
 
 Each agent/category has 26 fallback models:
 - Primary model → spare key → last key → next model spare → next model last → ...
-- Runtime fallback: 26 attempts, 15s cooldown, no timeout
+- Runtime fallback: OMO defaults (3 attempts, 60s cooldown, 30s timeout)
+
+### Runtime Fallback Configuration
+
+Runtime fallback is in `oh-my-openagent.json` under `runtime_fallback`.
+
+**OMO Default Values** (from [constants.ts](https://github.com/code-yeongyu/oh-my-openagent/blob/dev/packages/omo-opencode/src/hooks/runtime-fallback/constants.ts)):
+
+```json
+{
+  "runtime_fallback": {
+    "enabled": true,
+    "retry_on_errors": [400, 401, 403, 404, 429, 500, 502, 503, 504],
+    "max_fallback_attempts": 3,
+    "cooldown_seconds": 60,
+    "timeout_seconds": 30,
+    "notify_on_fallback": true
+  }
+}
+```
+
+| Setting | Default | Meaning |
+|---|---|---|
+| `timeout_seconds` | 30 | Max wait for response before triggering fallback. **Must be > 0** — setting to 0 DISABLES the timeout watchdog ([source](https://github.com/code-yeongyu/oh-my-openagent/blob/dev/packages/omo-opencode/src/hooks/runtime-fallback/message-update-handler.ts#L24)) |
+| `cooldown_seconds` | 60 | Wait between retrying a failed model |
+| `max_fallback_attempts` | 3 | Max fallback tries before giving up |
+| `retry_on_errors` | 429,500,502,503,504 | HTTP status codes that trigger fallback |
+| `notify_on_fallback` | true | Show notification when model switches |
+
+**Max total wait:** 30s timeout + 60s cooldown × 3 attempts = ~3.5 minutes
+
+**CRITICAL:** Never set `timeout_seconds: 0`. This disables the timeout watchdog and causes OpenCode to wait indefinitely on hung requests, resulting in 30+ minute hangs with no response.
 
 ### Disabled Providers
 
