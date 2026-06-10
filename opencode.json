@@ -1,0 +1,472 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "acp/qwen3.7-plus",
+  "small_model": "acp-spare/glm-4.7",
+  "disabled_providers": [
+    "anthropic",
+    "azure",
+    "azure-cognitive-services",
+    "openai",
+    "copilot",
+    "gemini",
+    "groq",
+    "xai",
+    "deepseek",
+    "openrouter",
+    "mistral",
+    "alibaba",
+    "alibaba-cn",
+    "alibaba-coding-plan"
+  ],
+  "plugin": [
+    "oh-my-openagent@latest"
+  ],
+  "provider": {
+    "acp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Alibaba Coding Plan",
+      "options": {
+        "baseURL": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "apiKey": "{env:ALIBABA_API_KEY}"
+      },
+      "models": {
+        "qwen3.7-plus": {
+          "name": "Qwen 3.7 Plus",
+          "capabilities": [
+            "text",
+            "deep-thinking",
+            "vision"
+          ],
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3.6-plus": {
+          "name": "Qwen 3.6 Plus",
+          "capabilities": [
+            "text",
+            "deep-thinking",
+            "vision"
+          ],
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3.5-plus": {
+          "name": "Qwen 3.5 Plus",
+          "capabilities": [
+            "text",
+            "deep-thinking",
+            "vision"
+          ],
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-max-2026-01-23": {
+          "name": "Qwen 3 Max",
+          "capabilities": [
+            "text",
+            "deep-thinking"
+          ],
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-coder-next": {
+          "name": "Qwen 3 Coder Next",
+          "capabilities": [
+            "text",
+            "coding"
+          ],
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-coder-plus": {
+          "name": "Qwen 3 Coder Plus",
+          "capabilities": [
+            "text",
+            "coding"
+          ],
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "glm-5": {
+          "name": "GLM-5",
+          "capabilities": [
+            "text",
+            "deep-thinking"
+          ],
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "glm-4.7": {
+          "name": "GLM-4.7",
+          "capabilities": [
+            "text",
+            "deep-thinking"
+          ],
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "kimi-k2.5": {
+          "name": "Kimi K2.5",
+          "capabilities": [
+            "text",
+            "deep-thinking",
+            "vision"
+          ],
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "MiniMax-M2.5": {
+          "name": "MiniMax M2.5",
+          "capabilities": [
+            "text",
+            "deep-thinking"
+          ],
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        }
+      }
+    },
+    "acp-spare": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Alibaba Coding Plan (Spare)",
+      "options": {
+        "baseURL": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "apiKey": "{env:ALIBABA_API_KEY_SPARE}"
+      },
+      "models": {
+        "qwen3.7-plus": {
+          "name": "Qwen 3.7 Plus",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3.6-plus": {
+          "name": "Qwen 3.6 Plus",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3.5-plus": {
+          "name": "Qwen 3.5 Plus",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-max-2026-01-23": {
+          "name": "Qwen 3 Max",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-coder-next": {
+          "name": "Qwen 3 Coder Next",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-coder-plus": {
+          "name": "Qwen 3 Coder Plus",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "glm-5": {
+          "name": "GLM-5",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "glm-4.7": {
+          "name": "GLM-4.7",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "kimi-k2.5": {
+          "name": "Kimi K2.5",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "MiniMax-M2.5": {
+          "name": "MiniMax M2.5",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        }
+      }
+    },
+    "acp-last": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Alibaba Coding Plan (Last)",
+      "options": {
+        "baseURL": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "apiKey": "{env:ALIBABA_API_KEY_LAST}"
+      },
+      "models": {
+        "qwen3.7-plus": {
+          "name": "Qwen 3.7 Plus",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3.6-plus": {
+          "name": "Qwen 3.6 Plus",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3.5-plus": {
+          "name": "Qwen 3.5 Plus",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-max-2026-01-23": {
+          "name": "Qwen 3 Max",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-coder-next": {
+          "name": "Qwen 3 Coder Next",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "qwen3-coder-plus": {
+          "name": "Qwen 3 Coder Plus",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "glm-5": {
+          "name": "GLM-5",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "glm-4.7": {
+          "name": "GLM-4.7",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "kimi-k2.5": {
+          "name": "Kimi K2.5",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "MiniMax-M2.5": {
+          "name": "MiniMax M2.5",
+          "attachment": false,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
