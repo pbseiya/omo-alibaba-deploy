@@ -1,7 +1,7 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "acp/qwen3.7-plus",
-  "small_model": "acp-spare/glm-4.7",
+  "small_model": "acp/qwen3.5-plus",
   "disabled_providers": [
     "anthropic",
     "azure",
