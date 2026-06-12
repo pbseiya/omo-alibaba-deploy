@@ -3,102 +3,46 @@
   "model_fallback": true,
   "agents": {
     "sisyphus": {
-      "model": "acp/qwen3.7-plus",
-      "fallback_models": [
-        "acp-spare/qwen3.7-plus",
-        "acp-last/qwen3.7-plus"
-      ]
+      "model": "litellm/qwen3.7-plus"
     },
     "hephaestus": {
-      "model": "acp/kimi-k2.5",
-      "fallback_models": [
-        "acp-spare/kimi-k2.5",
-        "acp-last/kimi-k2.5"
-      ]
+      "model": "litellm/kimi-k2.5"
     },
     "prometheus": {
-      "model": "acp/qwen3.7-plus",
-      "fallback_models": [
-        "acp-spare/qwen3.7-plus",
-        "acp-last/qwen3.7-plus"
-      ]
+      "model": "litellm/qwen3.7-plus"
     },
     "oracle": {
-      "model": "acp/qwen3.7-plus",
-      "fallback_models": [
-        "acp-spare/qwen3.7-plus",
-        "acp-last/qwen3.7-plus"
-      ]
+      "model": "litellm/qwen3.7-plus"
     },
     "metis": {
-      "model": "acp/qwen3.6-plus",
-      "fallback_models": [
-        "acp-spare/qwen3.6-plus",
-        "acp-last/qwen3.6-plus"
-      ]
+      "model": "litellm/qwen3.6-plus"
     },
     "momus": {
-      "model": "acp/qwen3.7-plus",
-      "fallback_models": [
-        "acp-spare/qwen3.7-plus",
-        "acp-last/qwen3.7-plus"
-      ]
+      "model": "litellm/qwen3.7-plus"
     },
     "atlas": {
-      "model": "acp/qwen3.5-plus",
-      "fallback_models": [
-        "acp-spare/qwen3.5-plus",
-        "acp-last/qwen3.5-plus"
-      ]
+      "model": "litellm/qwen3.5-plus"
     },
     "explore": {
-      "model": "acp/qwen3-coder-next",
-      "fallback_models": [
-        "acp-spare/qwen3-coder-next",
-        "acp-last/qwen3-coder-next"
-      ]
+      "model": "litellm/qwen3-coder-next"
     },
     "librarian": {
-      "model": "acp/qwen3-coder-next",
-      "fallback_models": [
-        "acp-spare/qwen3-coder-next",
-        "acp-last/qwen3-coder-next"
-      ]
+      "model": "litellm/qwen3-coder-next"
     },
     "multimodal-looker": {
-      "model": "acp/kimi-k2.5",
-      "fallback_models": [
-        "acp-spare/kimi-k2.5",
-        "acp-last/kimi-k2.5"
-      ]
+      "model": "litellm/kimi-k2.5"
     },
     "sisyphus-junior": {
-      "model": "acp/glm-4.7",
-      "fallback_models": [
-        "acp-spare/glm-4.7",
-        "acp-last/glm-4.7"
-      ]
+      "model": "litellm/glm-4.7"
     },
     "build": {
-      "model": "acp/kimi-k2.5",
-      "fallback_models": [
-        "acp-spare/kimi-k2.5",
-        "acp-last/kimi-k2.5"
-      ]
+      "model": "litellm/kimi-k2.5"
     },
     "plan": {
-      "model": "acp/qwen3.7-plus",
-      "fallback_models": [
-        "acp-spare/qwen3.7-plus",
-        "acp-last/qwen3.7-plus"
-      ]
+      "model": "litellm/qwen3.7-plus"
     },
     "OpenCode-Builder": {
-      "model": "acp/kimi-k2.5",
-      "fallback_models": [
-        "acp-spare/kimi-k2.5",
-        "acp-last/kimi-k2.5"
-      ]
+      "model": "litellm/kimi-k2.5"
     }
   },
   "team_mode": {
