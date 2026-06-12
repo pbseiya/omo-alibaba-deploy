@@ -540,6 +540,13 @@
             "text",
             "deep-thinking"
           ]
+        },
+        "qwen3-max-2026-01-23": {
+          "name": "Qwen 3 Max",
+          "capabilities": [
+            "text",
+            "deep-thinking"
+          ]
         }
       }
     }
